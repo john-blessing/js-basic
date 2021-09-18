@@ -1,0 +1,66 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-02 06:29:05
+ * @LastEditTime: 2021-09-18 18:16:52
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /algorithm/types.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var a = 1;
+      var b = "1";
+      var c = true;
+      var d = null;
+      var e = undefined;
+      var f = function () {};
+      var g = [];
+      var h = {};
+      var i = Symbol(1);
+      // console.log(a.constructor === Number);
+      // console.log(b.constructor === String);
+      // console.log(c.constructor === Boolean);
+      // console.log(f.constructor === Function);
+      // console.log(g.constructor === Array);
+      // console.log(h.constructor === Object);
+      // console.log(a.toString(), c.valueOf() == a);
+
+      // call apply bind
+
+      var name = 'tom', age = 17
+      var a = {
+        name: 'jerry',
+        age: this.age,
+        fn: function() {
+          console.log(this.name + ':' + this.age)
+        },
+        fn1: function() {
+          console.log(this.name + ':' + this.age)
+        }
+      };
+      // var f = a.fn1
+      // console.log(a.age)
+      // console.log(a.fn())
+      // f()
+      // a.fn()
+      // console.log(Object.prototype.toString.call([]))
+      var map = new Map();
+      map.set(1, '111');
+      map.set(2, '111');
+      map.set(3, '111');
+      map.set(4, '111');
+      var set = new Set([1,1,2,3,4,4]);
+      // =========== 转换数组 ===========
+      console.log(Array.from(map))
+      console.log(Array.from(set))
+    </script>
+  </body>
+</html>

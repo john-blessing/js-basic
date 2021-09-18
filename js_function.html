@@ -1,0 +1,28 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-07-18 23:51:54
+ * @LastEditTime: 2021-09-17 14:49:17
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /algorithm/js_function.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <script>
+      var Foo = function () {
+        this.name = "tom";
+      };
+      var Boo = function () {
+        this.age = 12;
+      };
+      Foo.prototype = new Boo();
+      var foo = new Foo();
+      console.log(foo.age);
+    </script>
+  </body>
+</html>

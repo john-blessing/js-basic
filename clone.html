@@ -1,0 +1,51 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-07-25 01:35:06
+ * @LastEditTime: 2021-08-07 10:26:24
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /algorithm/clone.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var obj = {
+        a: 1,
+        b: {
+            age: 1
+        },
+        c: [1,2,3]
+    }
+    function simpleClone(obj) {
+        let _obj = {}
+        for (var i in obj) {
+            _obj[i] = obj[i]
+        }
+        return _obj
+    }
+
+    console.log(simpleClone(obj))
+
+    function deepClone(startObj, temp) {
+        let _temp = temp || {}
+        for (var i in startObj) {
+            if (typeof startObj[i] === 'object') {
+                _temp[i] = startObj[i].constructor == Array ? [] : {}
+                deepClone(startObj[i], _temp[i])
+            } else {
+                temp[i] = startObj[i]
+            }
+        }
+
+        return _temp
+    }
+
+    console.log(deepClone(obj, {}))
+</script>
+</body>
+</html>

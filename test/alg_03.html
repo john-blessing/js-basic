@@ -1,0 +1,40 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-21 22:36:31
+ * @LastEditTime: 2021-08-22 20:14:19
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /algorithm/test/alg_03.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>组合成多少种不重复的数</title>
+  </head>
+  <body>
+    <script>
+      var total = [];
+      function get_all_num(arr) {
+        var i = 0;
+        var pre = 0;
+        var stack = [];
+        while (arr.length > i) {
+          if (stack.length < 2) {
+            prev = i
+            stack.push(arr[i]);
+          } else {
+            total.push(stack);
+            stack.pop();
+            i = prev;
+          }
+          i += 1
+        }
+        console.log(total);
+      }
+      get_all_num([1, 2, 3]);
+    </script>
+  </body>
+</html>

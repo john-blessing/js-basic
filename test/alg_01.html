@@ -1,0 +1,49 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-18 07:55:17
+ * @LastEditTime: 2021-08-19 08:08:28
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /algorithm/test/alg_01.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>有效括号</title>
+  </head>
+  <body>
+    <script>
+      // map 
+      var a = "([)])";
+      function valid_bracket(a) {
+        var _a = a.length
+        
+        if (_a % 2 === 1) {
+          return false
+        }
+        
+        var map = {
+          ")": "(",
+          "]": "[",
+          "}": "{",
+        };
+        var stack = []
+        for (var i of a) {
+          if (map[i]) {
+            if (!stack.length || stack[stack.length - 1] !== map[i]) {
+              return false
+            }
+            stack.pop()
+          } else {
+            stack.push(i)
+          }
+        }
+        return !stack.length
+      }
+      console.log(valid_bracket(a));
+    </script>
+  </body>
+</html>

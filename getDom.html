@@ -1,0 +1,84 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-05 23:58:11
+ * @LastEditTime: 2021-08-15 23:47:46
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /algorithm/getDom.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      id="box"
+      style="
+        width: 200px;
+        height: 200px;
+        background-color: antiquewhite;
+        margin-left: 200px;
+      "
+    ></div>
+    <script>
+      // var box = document.querySelector("#box");
+      // const obj = box.getBoundingClientRect();
+      // console.log(obj);
+
+      // var person = {
+      //   name: "tom",
+      //   age: 12,
+      // };
+
+      // var _person = new Proxy(person, {
+      //   get: function (target, property) {
+      //     if (property in target) {
+      //       return target[property];
+      //     } else {
+      //       throw new ReferenceError(`Property ${property} does not exist.`);
+      //     }
+      //   },
+      // });
+      // console.log(_person.age);
+
+      //样例数据
+      let demoNode = {
+        tagName: "ul",
+        props: { class: "list" },
+        children: [
+          { tagName: "li" },
+          { tagName: "li", children: ["toutiao"] },
+        ],
+      };
+      
+      function _renderDom(demoNode, div) {
+        var tag = document.createElement(demoNode["tagName"]);
+        if (demoNode["props"]) {
+          for (var prop in demoNode["props"]) {
+            tag.setAttribute(prop, demoNode["props"][prop])
+          }
+        }
+        if (demoNode["children"]) {
+          var children = demoNode["children"];
+          for (var i = 0; i < children.length; i++) {
+            if (children[i].constructor === Object) {
+              div.appendChild(tag)
+              _renderDom(children[i], tag);
+            } else {
+              tag.innerText = children[i];
+              div.appendChild(tag)
+            }
+          }
+        } else {
+          div.appendChild(tag)
+        }
+        return div
+      }
+      document.body.appendChild(_renderDom(demoNode, document.createElement("div")))
+    </script>
+  </body>
+</html>

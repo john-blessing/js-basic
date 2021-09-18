@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var firstUniqChar = function(s) {
+        if (s === '') {
+            return -1
+        }
+        var map = {}
+        for (var i = 0; i < s.length; i++) {
+            if (map[s[i]] === undefined || map[s[i]]) {
+                var count = map[s[i]] || 0
+                count += 1
+                map[s[i]] = count
+            }
+        }
+        for (var i = 0; i < s.length; i++) {
+            if (map[s[i]] === 1) {
+                return i;
+            }
+        }
+        return -1
+    };
+    console.log(firstUniqChar("aabb"))
+</script>
+</body>
+</html>

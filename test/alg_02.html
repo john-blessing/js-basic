@@ -1,0 +1,44 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-19 14:42:14
+ * @LastEditTime: 2021-08-21 22:17:44
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /algorithm/test/alg_02.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>碰撞算法</title>
+  </head>
+  <body>
+    <script>
+      // 假设A电动车3天充一次电， B电动车5天充一次电，给定天数之内，俩电动车刚好同一天充电的次数
+      function crash(days) {
+        var tem = []
+        var crash_list = []
+        var cur = 1
+        var i = 0
+        var j = 0
+        while (days > cur) {
+          cur = 3 * i
+          tem.push(cur)
+          i ++
+        }
+        cur = 1
+        while (days > cur) {
+          cur = 5 * j
+          if (cur > 0 && tem.indexOf(cur) > -1) {
+            crash_list.push(cur)
+          }
+          j ++
+        }
+        return crash_list
+      }
+      console.log(crash(50))
+    </script>
+  </body>
+</html>

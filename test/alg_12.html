@@ -1,0 +1,40 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-09-12 14:36:58
+ * @LastEditTime: 2021-09-12 14:44:25
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /algorithm/test/alg_12.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>手写ES6方法</title>
+  </head>
+  <body>
+    <script>
+      Array.prototype.customMap = function(fn) {
+        let list = this
+        let result = []
+        for (var i = 0; i < list.length; i++) {
+          result[i] = fn.call(this, list[i])
+        }
+        return result;
+      }
+      Array.prototype.customFilter = function(fn) {
+        let list = this
+        let result = []
+        for (var i = 0; i < list.length; i++) {
+          if (fn.call(this, list[i])) {
+            result.push(list[i])
+          }
+        }
+        return result;
+      }
+      console.log([1,2,3].customFilter(item => item < 2))
+    </script>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+<!--
+ * @Author: jinjf
+ * @Date: 2021-09-12 23:34:41
+ * @LastEditTime: 2021-09-13 16:06:28
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /algorithm/test/alg_13.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>常见排序算法</title>
+  </head>
+  <body>
+    <script>
+      // 快排序
+      function quickSort(arr) {
+        console.time();
+        if (arr.length < 2) {
+          return arr;
+        } else {
+          var base = arr[Math.floor((arr.length - 1) / 2)];
+          var left = [];
+          var right = [];
+          for (var i = 1; i < arr.length; i++) {
+            if (arr[i] <= base) {
+              left.push(arr[i]);
+            }
+          }
+          for (var i = 1; i < arr.length; i++) {
+            if (arr[i] > base) {
+              right.push(arr[i]);
+            }
+          }
+          var leftList = quickSort(left);
+          var rightList = quickSort(right);
+          leftList.push(base);
+          return leftList.concat(rightList);
+        }
+      }
+
+      function partition2(arr, low, high) {
+        let pivot = arr[low];
+        while (low < high) {
+          while (low < high && arr[high] > pivot) {
+            --high;
+          }
+          arr[low] = arr[high];
+          while (low < high && arr[low] <= pivot) {
+            ++low;
+          }
+          arr[high] = arr[low];
+        }
+        arr[low] = pivot;
+        return low;
+      }
+      
+      console.time('quickSort2')
+      function quickSort2(arr, low, high) {
+        if (low < high) {
+          let pivot = partition2(arr, low, high);
+          quickSort2(arr, low, pivot - 1);
+          quickSort2(arr, pivot + 1, high);
+        }
+        return arr;
+      }
+      console.timeEnd('quickSort2')
+      
+      // 插入排序
+      console.time('insertSort')
+      function insertSort(arr) {
+        for (var i = 1; i < arr.length; i++) {
+          let current = arr[i];
+          let prev = i - 1;
+          while (prev >= 0 && arr[prev] > current) {
+            arr[prev + 1] = arr[prev];
+            arr[prev] = current;
+            prev--;
+          }
+        }
+        return arr;
+      }
+      console.timeEnd('insertSort')
+      const getRandomArr = function (n, min, max) {
+        var arr = [];
+        for (var i = 0; i < n; i++) {
+          var random = Math.floor(Math.random() * (max - min + 1) + min);
+          arr.push(random);
+        }
+        return arr;
+      };
+      const randomNums = getRandomArr(1000000, 100, 20000);
+      // quickSort2(randomNums, 0, randomNums.length - 1);
+      // insertSort(randomNums);
+      // 希尔排序
+      
+    </script>
+  </body>
+</html>

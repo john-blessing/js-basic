@@ -1,0 +1,40 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-07-31 12:18:28
+ * @LastEditTime: 2021-08-18 23:00:51
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /algorithm/chain.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Node(value, next) {
+        return {
+          value,
+          next,
+        };
+      }
+      function array2list(ary, start = 0) {
+        if (start === ary.length) {
+          return null;
+        }
+        var node = Node(ary[start], null);
+        var rest = array2list(ary, start + 1);
+        node.next = rest;
+        return node;
+      }
+
+      const head = array2list([1, 2, 3, 7, 8, 16]);
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const plusOne = function (digits) {
+        if (digits.length === 0) {
+            return []
+        }
+        let len = digits.length - 1
+        for (let i = len ; i >= 0; i --) {
+            if (i === len) {
+                digits[i] += 1
+            }
+            if (digits[i] > 9) {
+                digits[i] = 0
+                if (i > 0) {
+                    digits[i - 1] = digits[i - 1] + 1
+                } else {
+                    digits.unshift(1)
+                }
+            }
+        }
+        return digits
+    };
+    // plusOne([2, 9, 9])
+    console.log(plusOne([6,1,4,5,3,9,0,1,9,5,1,8,6,7,0,5,5,4,3]))
+</script>
+</body>
+</html>

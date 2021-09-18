@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <button id="myButton">点击按钮</button>
+  </body>
+  <script>
+    // 冒泡阶段处理
+    document.getElementById('myButton').addEventListener(
+      'click',
+      function(ev) {
+        alert(1);
+      },
+      false
+    );
+    // 捕获阶段处理
+    document.body.addEventListener(
+      'click',
+      function(ev) {
+        alert(2);
+      },
+      true
+    );
+    // 冒泡阶段处理
+    document.addEventListener(
+      'click',
+      function(ev) {
+        alert(3);
+      },
+      false
+    );
+  </script>
+</html>
+

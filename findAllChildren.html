@@ -1,0 +1,46 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-07-11 13:21:52
+ * @LastEditTime: 2021-08-21 22:58:41
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /algorithm/findAllChildren.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查找子集</title>
+</head>
+<body>
+<script>
+    /*
+    * 递归算法
+    * */
+    let res = []
+
+    let len = 0
+
+    const arr = [1, 2, 3, 4]
+
+    function backtrack(i, tmp) {
+        res.push(tmp)
+
+        for (let j = i; j < len; j++) {
+            backtrack(j + 1, tmp.concat([arr[j]]))
+        }
+    }
+
+    function get_total() {
+
+        len = arr.length
+
+        backtrack(0, [])
+
+        return res
+    }
+
+    console.log(get_total())
+</script>
+</body>
+</html>

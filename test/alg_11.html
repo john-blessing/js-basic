@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const list = [1, 2, 3]
+
+    function sum(list, total) {
+
+        if (list.length === 0) {
+            return total
+        }
+
+        total += list.pop()
+        sum(list, total)
+    }
+
+    console.log(sum(list, 0))
+</script>
+</body>
+</html>
