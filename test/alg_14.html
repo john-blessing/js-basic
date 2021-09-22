@@ -1,0 +1,46 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-09-22 12:27:48
+ * @LastEditTime: 2021-09-22 12:56:03
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /algorithm/test/alg_14.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 防抖
+    var debounce = (cb, time) => {
+      var timer = null;
+      return () => {
+        clearTimeout(timer)
+        timer = setTimeout(() => {
+          cb && cb()
+        }, time)
+      }
+    };
+    // 节流
+    var throttle = (cb, time) => {
+      let prev = 0;
+      return () => {
+        var current = Date.now()
+        if (current - prev >= time) {
+          cb && cb()
+          prev = Date.now()
+        }
+      }
+    };
+    var _throttle = throttle(() => {
+      console.log(123)
+    }, 1000);
+    _throttle();
+  </script>
+</body>
+</html>

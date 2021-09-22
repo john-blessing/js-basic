@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-07-25 01:35:06
- * @LastEditTime: 2021-08-07 10:26:24
+ * @LastEditTime: 2021-09-22 11:14:14
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /algorithm/clone.html
@@ -13,32 +13,42 @@
     <title>Title</title>
 </head>
 <body>
+<p id="box"></p>
 <script>
-    var obj = {
+    const obj = {
         a: 1,
         b: {
             age: 1
         },
-        c: [1,2,3]
+        c: [1, 2, 3],
+        d: /(.*)/g,
+        e: new Date(),
+        f: document.body
     }
+
     function simpleClone(obj) {
         let _obj = {}
-        for (var i in obj) {
-            _obj[i] = obj[i]
+        for (let i in obj) {
+            if (obj.hasOwnProperty(i)) _obj[i] = obj[i];
         }
         return _obj
     }
 
-    console.log(simpleClone(obj))
+    // console.log(simpleClone(obj))
 
     function deepClone(startObj, temp) {
         let _temp = temp || {}
-        for (var i in startObj) {
-            if (typeof startObj[i] === 'object') {
-                _temp[i] = startObj[i].constructor == Array ? [] : {}
-                deepClone(startObj[i], _temp[i])
-            } else {
-                temp[i] = startObj[i]
+        for (let i in startObj) {
+            if (startObj.hasOwnProperty(i)) {
+                if (typeof startObj[i] === 'object') {
+                    _temp[i] = startObj[i].constructor === Array ? [] : {}
+                    deepClone(startObj[i], _temp[i])
+                }
+                if (startObj[i].constructor === RegExp) {
+                    temp[i] = RegExp(startObj[i])
+                } else {
+                    temp[i] = startObj[i]
+                }
             }
         }
 
@@ -46,6 +56,17 @@
     }
 
     console.log(deepClone(obj, {}))
+    console.log(obj.f instanceof HTMLElement)
+
+    console.log([].reduce((a, b) => a + b, 0))
+
+    // const getUrlParams = url => {
+    //     return url.match(/([^?=&]+)(=([^&]*))/g) || [];
+    // };
+
+    console.log(getUrlParams('http://url.com/page?name=Adam&surname=Smith'))
+
+    var reg = new RegExp(/([^?]=)/);
 </script>
 </body>
 </html>

@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdd4ce10-52cf-4d0e-925f-34b13dcfb9a5" name="Default Changelist" comment="" />
+    <list default="true" id="cdd4ce10-52cf-4d0e-925f-34b13dcfb9a5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/quickSort.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ts_test/01_paradigm.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ts_test/02_abstract.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ts_test/customAxios.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ts_test/inde.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clone.html" beforeDir="false" afterPath="$PROJECT_DIR$/clone.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/quickSrot.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/quickSrot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/types.html" beforeDir="false" afterPath="$PROJECT_DIR$/types.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/webpack/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/webpack/yarn.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,7 +24,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -27,7 +42,12 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/lodash" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="" />
+    <bower.json value="" />
   </component>
   <component name="ProjectId" id="1xFB2NJ4Bht6V9ZKWFlowuICeYB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -42,11 +62,15 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/ts_test/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -54,7 +78,7 @@
       <recent name="$PROJECT_DIR$/binary-tree" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.inde.html">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -68,6 +92,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="clone.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/algorithm/clone.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="inde.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/algorithm/ts_test/inde.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="types.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/algorithm/types.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="quickSort" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="algorithm" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/quickSort.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.inde.html" />
+        <item itemvalue="JavaScript Debug.types.html" />
+        <item itemvalue="JavaScript Debug.clone.html" />
+        <item itemvalue="Python.quickSort" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -87,14 +150,29 @@
       <workItem from="1630933277809" duration="224000" />
       <workItem from="1630977465590" duration="1984000" />
       <workItem from="1631104500839" duration="1716000" />
+      <workItem from="1631975866095" duration="497000" />
+      <workItem from="1632036074575" duration="4863000" />
+      <workItem from="1632058416676" duration="1915000" />
+      <workItem from="1632063318988" duration="3452000" />
+      <workItem from="1632102958502" duration="5975000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/ts_test/02_abstract.js" />
+        <option value="$PROJECT_DIR$/ts_test/01_paradigm.js" />
+        <option value="$PROJECT_DIR$/ts_test/customAxios.js" />
+      </list>
+    </option>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/algorithm$quickSort.coverage" NAME="quickSort Coverage Results" MODIFIED="1632038532227" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
