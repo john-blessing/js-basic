@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>归并排序</title>
+</head>
+<body>
+<script>
+    function merge(arr, leftPtr, rightPtr, rightBound) {
+        if (leftPtr === rightPtr) {
+            return;
+        }
+        let mid = rightPtr - 1 ;
+        let i = leftPtr;
+        let j = rightPtr;
+        let k = 0
+        let temp = []
+
+        while(i <= mid && j < rightBound) {
+            temp[k++] = arr[i] <= arr[j] ? arr[i++] : arr[j++]
+        }
+
+        while (i <= mid) temp[k++] = arr[i++]
+        while (j < rightBound) temp[k++] = arr[j++]
+
+        console.log(temp)
+    }
+    const a = [3,5,6,2,5,7]
+    merge(a, 0, 3, a.length - 1)
+</script>
+</body>
+</html>

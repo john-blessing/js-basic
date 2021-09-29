@@ -1,7 +1,7 @@
 <!--
  * @Author: jinjf
  * @Date: 2021-09-12 23:34:41
- * @LastEditTime: 2021-09-13 16:06:28
+ * @LastEditTime: 2021-09-26 23:27:04
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /algorithm/test/alg_13.html
@@ -17,8 +17,8 @@
   <body>
     <script>
       // 快排序
+      console.time("quickSort");
       function quickSort(arr) {
-        console.time();
         if (arr.length < 2) {
           return arr;
         } else {
@@ -41,6 +41,7 @@
           return leftList.concat(rightList);
         }
       }
+      console.timeEnd("quickSort");
 
       function partition2(arr, low, high) {
         let pivot = arr[low];
@@ -57,22 +58,22 @@
         arr[low] = pivot;
         return low;
       }
-      
-      console.time('quickSort2')
+
       function quickSort2(arr, low, high) {
+        console.time("quickSort2");
         if (low < high) {
           let pivot = partition2(arr, low, high);
           quickSort2(arr, low, pivot - 1);
           quickSort2(arr, pivot + 1, high);
         }
+        console.timeEnd("quickSort2");
         return arr;
       }
-      console.timeEnd('quickSort2')
-      
+
       // 插入排序
-      console.time('insertSort')
       function insertSort(arr) {
-        for (var i = 1; i < arr.length; i++) {
+        console.time("insertSort");
+        for (var i = 1, len = arr.length; i < len; i++) {
           let current = arr[i];
           let prev = i - 1;
           while (prev >= 0 && arr[prev] > current) {
@@ -81,9 +82,10 @@
             prev--;
           }
         }
+        console.timeEnd("insertSort");
         return arr;
       }
-      console.timeEnd('insertSort')
+
       const getRandomArr = function (n, min, max) {
         var arr = [];
         for (var i = 0; i < n; i++) {
@@ -92,11 +94,11 @@
         }
         return arr;
       };
-      const randomNums = getRandomArr(1000000, 100, 20000);
-      // quickSort2(randomNums, 0, randomNums.length - 1);
+      const randomNums = getRandomArr(10000000, 100, 20000);
+      quickSort2(randomNums, 0, randomNums.length - 1);
+      // quickSort(randomNums);
       // insertSort(randomNums);
       // 希尔排序
-      
     </script>
   </body>
 </html>
